@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #111;
+            color: #fff;
+        }
+
+        /* css filter  */
+        img {
+            width: 250px;
+            margin-bottom: 20px;
+        }
+
+        .filter1 {
+            filter: grayscale(90%) sepia(13%) saturate(700%);
+        }
+
+        .filter2 {
+            filter: hue-rotate(-40deg);
+        }
+
+        .filter3 {
+            filter: contrast(170%) saturate(80%) blur(1px);
+        }
+
+      
+
+        h2 {
+            background-image: linear-gradient (to right, yellow, lightblue);
+            background-size: 100% 100%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            text-align: center;
+            font-weight: 800;
+        }
+
+        .addimage {
+            background-image: url("bgimg.jpeg");
+            background-size: 100% 100%;
+            text-transform: uppercase;
+            font-size: 5rem;
+            font-weight: 800;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>orignal image</h1>
+        <img src="img.jpg">
+        <h1>filter images</h1>
+        <img src="img.jpg" class="filter1">
+        <img src="img.jpg" class="filter2">
+        <img src="img.jpg" class="filter3">
+        
+    </div>
+    
+</body>
+
+</html>
