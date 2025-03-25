@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #39315a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: system-ui, sans-serif;
+        }
+
+        input[type=checkbox] {
+            z-index: 1;
+            -webkit-appearance: none;
+            width: 5rem;
+            height: 1.6rem;
+            border: 1px solid rgba(160, 160, 160, 1);
+            border-radius: 1rem;
+            position: relative;
+        }
+
+        input[type="checkbox"]::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+            width: 50%;
+            height: 100%;
+            background: #514878;
+            border-top-left-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            content: 'OFF';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        label::before {
+            display: block;
+            color: white;
+            content: 'Turn on the light';
+            margin-top: 1rem;
+            font-size: 2rem;
+            font-weight: 100;
+        }
+
+        .dark-mode {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transition: all .3s ease-in-out;
+            opacity: 0;
+            background: white;
+            mix-blend-mode: difference;
+        }
+
+        input[type=checkbox]:checked~.dark-mode {
+            opacity: 1;
+        }
+
+        input[type="checkbox"]:checked::after {
+            right: 0;
+            left: auto;
+            background: #52cf71;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            content: 'ON';
+        }
+
+        input[type=checkbox]:checked~label:before {
+            content: "Turn off the light";
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="switch">
+    <label for="switch"></label>
+    <section class="dark-mode"></section>
+</body>
+
+</html>
