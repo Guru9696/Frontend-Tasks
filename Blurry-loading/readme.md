@@ -1,0 +1,1 @@
+This is blurry loading UI design. create with using html, css and js.
